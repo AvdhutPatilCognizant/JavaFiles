@@ -1,0 +1,229 @@
+Assignment of Day1 
+ ques1-
+import java.util.Scanner;
+
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);``	 
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        System.out.print("Enter the range (e.g., up to 10): ");
+        int range = scanner.nextInt();
+        System.out.println("Multiplication table for " + number + " up to " + range + ":");
+        for (int i = 1; i <= range; i++) {
+            int result = number * i;
+            System.out.println(number + " * " + i + " = " + result);
+        }
+
+        scanner.close();
+    }
+}
+
+Ques2-
+import java.util.Scanner;
+
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Enter an operator (+, -, *, /): ");
+        char operator = scanner.next().charAt(0); // Read the first character of the input as the operator
+
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+
+        double result;
+
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                System.out.println("Result: " + result);
+                break;
+            case '-':
+                result = num1 - num2;
+                System.out.println("Result: " + result);
+                break;
+            case '*':
+                result = num1 * num2;
+                System.out.println("Result: " + result);
+                break;
+            case '/':
+                if (num2 != 0) {
+                    result = num1 / num2;
+                    System.out.println("Result: " + result);
+                } else {
+                    System.out.println("Error: Division by zero is not allowed.");
+                }
+                break;
+            default:
+                System.out.println("Invalid operator.");
+        }
+
+        scanner.close();
+    }
+}
+
+
+Ques3-
+public class DisplayNumbers {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i);
+        }
+    }
+}
+
+Ques4-
+public class DisplayNumbersExcluding24 {
+    public static void main(String[] args) {
+        for (int i = 3; i <= 30; i++) {
+            if (i != 24) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+Ques5-
+import java.util.Scanner;
+
+public class ResultCategory {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the result percentage: ");
+        double percentage = scanner.nextDouble();
+
+        if (percentage < 0 || percentage > 100) {
+            System.out.println("Invalid percentage. Please enter a percentage between 0 and 100.");
+        } else if (percentage < 40) {
+            System.out.println("Result: Fail");
+        } else if (percentage < 50) {
+            System.out.println("Result: Pass");
+        } else if (percentage < 60) {
+            System.out.println("Result: Second Class");
+        } else if (percentage < 75) {
+            System.out.println("Result: First Class");
+        } else {
+            System.out.println("Result: Distinction");
+        }
+
+        scanner.close();
+    }
+}
+
+Ques6
+
+ public class PrimeNumbers {
+    public static void main(String[] args) {
+        System.out.println("Prime numbers between 3 and 30:");
+
+        for (int num = 3; num <= 30; num++) {
+            if (isPrime(num)) {
+                System.out.print(num + " ");
+            }
+        }
+    }
+
+    // Function to check if a number is prime
+    public static boolean isPrime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+        if (n <= 3) {
+            return true;
+        }
+        if (n % 2 == 0 || n % 3 == 0) {
+            return false;
+        }
+
+        for (int i = 5; i * i <= n; i += 6) {
+            if (n % i == 0 || n % (i + 2) == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+
+Ques7-
+public class NestedLoopExample {
+    public static void main(String[] args) {
+        for (char outer = 'A'; outer <= 'C'; outer++) {
+            for (char inner = 'a'; inner <= 'c'; inner++) {
+                System.out.println(outer + "  " + inner);
+            }
+        }
+    }
+}
+
+Ques8-
+Pattern1-
+public class Pattern1 {
+    public static void main(String[] args) {
+        int rows = 5;
+        for (int i = 1; i <= rows; i++) {
+            // Print spaces
+            for (int j = 1; j <= rows - i; j++) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int k = 1; k <= i; k++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+Pattern2-
+public class Pattern2 {
+    public static void main(String[] args) {
+        int rows = 4;
+        for (int i = 1; i <= rows; i++) {
+            // Print spaces
+            for (int j = 1; j < i; j++) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int k = i; k <= rows; k++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+Pattern3-
+public class Pattern3 {
+    public static void main(String[] args) {
+        int rows = 4;
+        for (int i = 1; i <= rows; i++) {
+            // Print spaces
+            for (int j = 1; j <= rows - i; j++) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int k = 1; k <= i; k++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        for (int i = rows - 1; i >= 1; i--) {
+            // Print spaces
+            for (int j = 1; j <= rows - i; j++) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int k = 1; k <= i; k++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+
